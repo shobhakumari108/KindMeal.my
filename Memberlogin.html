@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Login</title>
+    <style>
+        #box{
+            width: 40%;
+            border: 1px solid rgb(167, 161, 161);
+            margin: auto;
+            border-radius: 10px;
+            margin-top: 80px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #box>img{
+            margin-left:18%;
+            margin-top: 30px;
+        }
+        #box>h3{
+            text-align: center;
+        }
+        form{
+            margin: auto;
+            
+            width: 90%;
+        }
+        input{
+            padding: 12px 173px 12px 12px;
+            font-size: 15px;
+            margin-left: 50px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        
+            border: 1px solid rgb(190, 178, 178);
+            
+        
+        }
+        #box>div{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+        #box>div>h3{
+            color: rgb(124, 120, 120);
+        }
+        #btn{
+            background-color: green;
+            padding:14px 100px 14px 100px;
+            border: transparent;
+            color: white;
+            border-radius: 8px;
+            margin-left: 120px;
+            margin-bottom: 25px;
+        }
+        #Facebook{
+            background-color: rgb(34, 96, 146);
+            width: 60%;
+            color: white;
+            justify-content: space-around;
+            display: flex;
+            height: 30px;
+            padding: 10px 10px 30px 10px; 
+            margin: auto; 
+            border-radius: 8px; 
+            margin-top: 25px;
+            border-color: transparent;
+        }
+        #Facebook>img{
+            height:30px;
+            padding-bottom: -10px;
+            margin-top: -5px;
+            
+
+        }
+        #Facebook>h3{
+           margin-top: 4px;
+        }
+        form>div{
+            width: 100%;
+            background-color: rgb(214, 203, 203);
+            height: 1px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="https://www.kindmeal.my/images/logo-kindmeal.png">
+        <h3>Member Login</h3>
+        <form>
+            <input type="email" placeholder="Your Email" id="email"><br>
+            <input type="password" placeholder="Your Password" id="pass"><br>
+            <button id="btn">Login</button>
+            <div></div>
+            <button id="Facebook">
+                <img src="https://www.kindmeal.my/images/icon_button_fb.png" alt="Pic">
+               <h3>Login With Facebook</h3>
+            </button>
+        </form>
+        <div>
+            <h3>Forgot password?</h3>
+            <h3>Not a member? Sign Up  FREE!</h3>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit", Myfunction);
+     Arrdata=JSON.parse(localStorage.getItem("userData")) || []
+
+     function Myfunction(){
+       event.preventDefault();
+
+       let obj={
+        
+        email:document.querySelector("#email").value,
+        password:document.querySelector("#pass").value
+        
+       }
+    if(checkEmail(obj.email)===true){
+          Arrdata.push(obj);
+          
+          localStorage.setItem("userData", JSON.stringify(Arrdata));
+          alert("Thankyou for sign in");
+        //   window.location.href="Signin-2.html"
+        }else {
+          alert("Acount already exist");
+        }
+        
+      }
+
+      function checkEmail(email){
+       let filtered = Arrdata.filter(function(elem){
+        return email ===elem.email;
+       })
+       if(filtered.length>0){
+        return false;
+       }else{
+        return true;
+       }
+      }
+   
+
+</script>
+</html>
