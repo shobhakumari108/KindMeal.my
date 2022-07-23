@@ -16,9 +16,13 @@
             margin-right: 150px;
             padding: 10px;
         }
+        #box1>img{
+            cursor: pointer;
+        }
         #smallbox1{
              margin-top: 10px;
             display: flex;
+            
             
         }
         #smallbox1>p{
@@ -33,6 +37,7 @@
             border-radius: 8px;
             border-color:transparent;
             font-weight: bold;
+            cursor: pointer;
             
         }
         #smallbox1>button+button{
@@ -42,6 +47,7 @@
             width: 30%;
             height: 60%;
             margin-top: 15px;
+            cursor: pointer;
             }
             #box2{
                 background-color:rgb(10, 133, 10);
@@ -53,8 +59,11 @@
                 display: flex;
                 width: 80%;
                 justify-content: space-around;
-                color: white;           
+                /* color: white;            */
                 margin: auto;
+            }
+            #box2>div>h3>a{
+                color:white;
             }
             #smallbox1+button>a{
             color:white;
@@ -69,6 +78,12 @@
             color:black;
             text-decoration: none;
         }
+        #last{
+            width: 100%;
+            height: auto;
+        }
+
+       
 
     </style>
 </head>
@@ -86,22 +101,24 @@
         <p>Login</p>
         <button>Facebook</button>
         <button><a href="Memberlogin.html" id="white">Email</a></button>
-        <p><a href="SignUp.html">Sign Up</a></p>
+        
+        <p><a href="SignUp.html"> Sign Up</a></p>
     </div>
     </div>
     <div id="box2">
         <div>
         <h3><a href="index.html">Home</a></h3>
-        <h3>Meal Deals</h3>
-        <h3>KindMoments</h3>
-        <h3>Hot Picks</h3>
-        <h3>Recipes</h3>
-        <h3>Directory</h3>
-        <h3>Articles</h3>
-        <h3>Help</h3>
+        <h3><a href="https://www.kindmeal.my/deals.htm">Meal Deals</a></h3>
+        <h3><a href="https://www.kindmeal.my/moments.htm">KindMoments</a></h3>
+        <h3><a href="https://www.kindmeal.my/hotpicks.htm">Hot Picks</a></h3>
+        <h3><a href="https://www.kindmeal.my/recipes.htm">Recipes</a></h3>
+        <h3><a href="https://www.kindmeal.my/vegetarian_directory.htm">Directory</a></h3>
+        <h3><a href="https://www.kindmeal.my/articles/">Articles</a></h3>
+        <h3><a href="https://www.kindmeal.my/help.htm">Help</a></h3>
         </div>
         
     </div>
+    <div id="last"><a href="index.html"></a></div>
     
 </body>
 </html>
